@@ -34,12 +34,6 @@ public class QuestionService {
 
     public ResponseEntity<String> addOneQuestion(Question question) {
         questionDao.save(question);
-
-        try {
-            return new ResponseEntity<>("success", HttpStatus.ACCEPTED);
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-        return new ResponseEntity<>("fail", HttpStatus.NO_CONTENT) ;
+        return new ResponseEntity<>("success", HttpStatus.ACCEPTED);
     }
 }
